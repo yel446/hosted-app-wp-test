@@ -23,7 +23,8 @@ const App: React.FC = () => {
   return (
     <div className="hosted-app">
       <h1>
-        Hosted App with <b>Webpack</b>{" "}
+        Hosted App with <b>Webpack</b>
+        {"😎"}
       </h1>
       <div className="hosted-app__displayer">
         <div className="hosted-app__displayer__block">
