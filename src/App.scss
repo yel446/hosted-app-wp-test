@@ -1,0 +1,68 @@
+.hosted-app {
+  width: 100vw;
+  height: 100vh;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-sizing: border-box;
+
+  h1 {
+    width: 100%;
+    text-align: center;
+    font-weight: 400;
+    color: #ffffff;
+
+    b {
+      color: #79ddf6;
+    }
+  }
+
+  &__displayer {
+    width: 100%;
+    height: 100%;
+    background: #080808;
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    &__block {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      height: 100%;
+      gap: 10px;
+
+      .title {
+        width: 100%;
+        text-align: center;
+        font-weight: 400;
+        color: #ae4df3;
+
+        &.no {
+          color: #383838;
+        }
+      }
+
+      .container {
+        width: 100%;
+        height: 100%;
+        background: #161515;
+        border-radius: 20px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-weight: 600;
+        font-size: small;
+
+        &.no {
+          border: 2px dashed #383838;
+        }
+      }
+    }
+  }
+}
