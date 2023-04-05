@@ -11,6 +11,7 @@ import { ErrorFallback } from "./components/ErrorFallback/ErrorFallback";
 
 const Welcome = React.lazy(() => import("remote_app_wp/Welcome"));
 const Counter = React.lazy(() => import("remote_app_wp/Counter"));
+const Sample = React.lazy(() => import("custom_library/Sample"));
 
 const App: React.FC = () => {
   const { ErrorBoundary } = useErrorBoundary({
@@ -46,7 +47,8 @@ const App: React.FC = () => {
               renderError={({ error }) => <ErrorFallback error={error} />}
             >
               <Suspense fallback={<p> no component yet 😝</p>}>
-                <Counter />
+                <Sample text="Bonjour!!" />
+                <Sample />
               </Suspense>
             </ErrorBoundary>
           </div>

@@ -67,6 +67,8 @@ module.exports = (_, argv) => ({
           argv.mode === "developpement"
             ? "remote_app_wp@http://localhost:3001/remoteEntry.js"
             : "remote_app_wp@https://remote-app-wp-test.vercel.app/remoteEntry.js",
+        custom_library:
+          "custom_library@https://remote-library-react-template.vercel.app/remoteEntry.js ",
       },
       exposes: {},
       shared: {
