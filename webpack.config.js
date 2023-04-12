@@ -5,7 +5,7 @@ const deps = require("./package.json").dependencies;
 module.exports = (_, argv) => ({
   output: {
     publicPath:
-      argv.mode === "developpement"
+      argv.mode === "development"
         ? "http://localhost:3000/"
         : "https://hosted-app-wp-test.vercel.app/",
   },
@@ -64,7 +64,7 @@ module.exports = (_, argv) => ({
       filename: "remoteEntry.js",
       remotes: {
         remote_app_wp:
-          argv.mode === "developpement"
+          argv.mode === "development"
             ? "remote_app_wp@http://localhost:3001/remoteEntry.js"
             : "remote_app_wp@https://remote-app-wp-test.vercel.app/remoteEntry.js",
         custom_library:

@@ -13,6 +13,17 @@ const Welcome = React.lazy(() => import("remote_app_wp/Welcome"));
 const Counter = React.lazy(() => import("remote_app_wp/Counter"));
 const Sample = React.lazy(() => import("custom_library/Sample"));
 
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      "app-component1-mf": React.DetailedHTMLProps<
+        React.HTMLAttributes<HTMLElement>,
+        HTMLElement
+      >;
+    }
+  }
+}
+
 const App: React.FC = () => {
   const { ErrorBoundary } = useErrorBoundary({
     onDidCatch: (error, errorInfo) => {
@@ -20,6 +31,14 @@ const App: React.FC = () => {
       console.log(error, " |===| ", errorInfo);
     },
   });
+
+  const test = (e: any) => {
+    alert("evt :" + e);
+  };
+
+  const increaseDouble = function () {
+    console.log("ok");
+  };
 
   return (
     <div className="hosted-app">
@@ -47,8 +66,9 @@ const App: React.FC = () => {
               renderError={({ error }) => <ErrorFallback error={error} />}
             >
               <Suspense fallback={<p> no component yet 😝</p>}>
-                <Sample text="Bonjour!!" />
-                <Sample />
+                {/* <Sample text="Bonjour!!" />*/}
+                {/*<Counter /> */}
+                <app-component1-mf text="yoo! ✌️"></app-component1-mf>
               </Suspense>
             </ErrorBoundary>
           </div>
